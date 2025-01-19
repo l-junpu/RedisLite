@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Server">
+      <UniqueIdentifier>{c79d0ba7-cf40-4a68-82bc-c59ce0064248}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Cache">
+      <UniqueIdentifier>{4b6b5893-bd4b-4fd9-a248-04a79ba3c2c8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Server.cpp">
+      <Filter>Source Files\Server</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Server.h">
+      <Filter>Source Files\Server</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

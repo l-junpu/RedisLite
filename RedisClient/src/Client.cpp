@@ -20,28 +20,42 @@ namespace soba
 
 	void TcpClient::Run()
 	{
-		int count = 0;
+		std::string command  = {};
+		Sender      sender   = Sender(m_ClientSocket.GetSocket());
+		Receiver    receiver = Receiver(m_ClientSocket.GetSocket());
 
-		Sender   sender   = Sender(m_ClientSocket.GetSocket());
-		Receiver receiver = Receiver(m_ClientSocket.GetSocket());
-
-		while (count < 5) {
+		while (true) {
 			try {
-				sender.SendData("hello hello from client");
+				// Wait for Client's comamnd
+				command = m_InputHandler.AwaitUserCommand();
 
+				// This happens only if the Client types "/help" or <Enter> by accident 
+				if (command.empty()) {
+					std::cout << "\n-------------------------------------------\n" << std::endl;
+					continue;
+				}
+
+				// Send the Client's command over - If "/exit", we can just terminate and cleanup
+				std::cout << "Sending command: " << command << std::endl;
+				sender.SendData(command);
+				if (command == "/exit") break;
+
+				// Receive Server's response
 				std::string response = receiver.ReceiveData();
 				std::cout << "Received response: " << response << std::endl;
-
-				++count;
-				Sleep(1000);
+				std::cout << "\n-------------------------------------------\n" << std::endl;
 			}
 			catch (const std::exception& e) {
 				std::cout << "Client error: " << e.what() << std::endl;
 			}
 		}
 
-		sender.SendData("exit");
 		closesocket(m_ClientSocket.GetSocket());
 		WSACleanup();
+	}
+
+	bool TcpClient::ValidCommand(const std::string& command) const
+	{
+		return false;
 	}
 }

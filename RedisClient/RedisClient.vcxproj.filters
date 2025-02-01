@@ -11,6 +11,12 @@
     <Filter Include="Source Files\TcpSocket">
       <UniqueIdentifier>{51468d11-4d91-46b8-8690-a8acc4102a20}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\InputHandler">
+      <UniqueIdentifier>{9fdb2a07-c845-4903-bd4d-e3762a37a913}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utils">
+      <UniqueIdentifier>{d00a62f0-9b64-4a0b-a57f-63228f69e0c2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp">
@@ -25,6 +31,9 @@
     <ClCompile Include="..\Common\TcpSocket.cpp">
       <Filter>Source Files\TcpSocket</Filter>
     </ClCompile>
+    <ClCompile Include="src\InputHandler.cpp">
+      <Filter>Source Files\InputHandler</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Client.h">
@@ -35,6 +44,12 @@
     </ClInclude>
     <ClInclude Include="..\Common\TcpSocket.h">
       <Filter>Source Files\TcpSocket</Filter>
+    </ClInclude>
+    <ClInclude Include="src\InputHandler.h">
+      <Filter>Source Files\InputHandler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Utils.h">
+      <Filter>Source Files\Utils</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

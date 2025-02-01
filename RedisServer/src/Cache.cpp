@@ -19,11 +19,9 @@ namespace soba
 
 			std::cout << "Received request: " << request << std::endl;
 
-			if (request == "exit") {
-				break;
-			}
+			if (request == "/exit") break;
 			else {
-				sender.SendData("meow meow meow meow");
+				sender.SendData(request);
 			}
 		}
 

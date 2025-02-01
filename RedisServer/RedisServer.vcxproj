@@ -138,6 +138,7 @@
   <ItemGroup>
     <ClInclude Include="..\Common\SenderReceiver.h" />
     <ClInclude Include="..\Common\TcpSocket.h" />
+    <ClInclude Include="..\Common\Utils.h" />
     <ClInclude Include="src\Cache.h" />
     <ClInclude Include="src\Server.h" />
   </ItemGroup>

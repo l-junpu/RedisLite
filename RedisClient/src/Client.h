@@ -1,6 +1,7 @@
 #ifndef SOBA_CLIENT_H
 #define SOBA_CLIENT_H
 
+#include "InputHandler.h"
 #include "Common/TcpSocket.h"
 #include "Common/SenderReceiver.h"
 
@@ -22,7 +23,12 @@ namespace soba
 
 	private:
 
-		TcpSocket m_ClientSocket;
+		bool ValidCommand(const std::string& command) const;
+
+	private:
+
+		InputHandler m_InputHandler;
+		TcpSocket    m_ClientSocket;
 	};
 }
 

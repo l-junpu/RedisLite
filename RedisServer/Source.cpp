@@ -7,9 +7,8 @@
 
 int main()
 {
-	std::string host = "127.0.0.1";
 	soba::TcpServer server;
 
-	server.InitializeServer(host, 27015);
+	server.InitializeServer("127.0.0.1", 27015);
 	server.Run();
 }

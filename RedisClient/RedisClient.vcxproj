@@ -133,11 +133,14 @@
     <ClCompile Include="..\Common\TcpSocket.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="src\Client.cpp" />
+    <ClCompile Include="src\InputHandler.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Common\SenderReceiver.h" />
     <ClInclude Include="..\Common\TcpSocket.h" />
+    <ClInclude Include="..\Common\Utils.h" />
     <ClInclude Include="src\Client.h" />
+    <ClInclude Include="src\InputHandler.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

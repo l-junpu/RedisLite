@@ -2,8 +2,12 @@
 #define SOBA_CACHE_H
 
 #include <mutex>
+#include <string>
+#include <vector>
+#include <chrono>
 #include <winsock2.h>
 #include <ws2tcpip.h>
+#include <unordered_map>
 
 namespace soba
 {
@@ -11,31 +15,29 @@ namespace soba
 	{
 	public:
 
-		using RespFormat = std::string;
+		using RespFormat = std::vector<std::string>;
 
 		void HandleUserRequest(SOCKET clientSocket);
 		
 	private:
 
-		enum class RequestType : uint8_t
+		struct DataInfo
 		{
-			SET = 0,
-			REMOVE,
-			GET,
-			EXIT
+			std::string                           Data;
+			std::chrono::milliseconds             Expiry;     // If Expiry is not set by the Client, it is set to - std::chrono::milliseconds::max()
+			std::chrono::steady_clock::time_point StartTime;
 		};
-
-		std::pair<RequestType, RespFormat> InterpretUserRequest(const std::string& request);
 
 		std::string GetData(const RespFormat& request);
 
-		void SetData(const RespFormat& request);
+		std::string SetData(const RespFormat& request);
 
-		void RemoveData(const RespFormat& request);
+		std::string DeleteData(const RespFormat& request);
 
 	private:
 
-		std::mutex m_Lock;
+		std::mutex                                m_Lock;
+		std::unordered_map<std::string, DataInfo> m_Cache;
 	};
 }
 

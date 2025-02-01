@@ -4,7 +4,7 @@
 #include <string>
 #include <algorithm>
 
-namespace soba
+namespace soba::utils
 {
 	std::string tolower(std::string& data) {
 		std::transform(data.begin(), data.end(), data.begin(),

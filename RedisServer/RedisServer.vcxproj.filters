@@ -34,6 +34,12 @@
     <ClCompile Include="..\Common\SenderReceiver.cpp">
       <Filter>Source Files\TcpSocket</Filter>
     </ClCompile>
+    <ClCompile Include="src\Encoder.cpp">
+      <Filter>Source Files\Cache</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Decoder.cpp">
+      <Filter>Source Files\Cache</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Server.h">
@@ -50,6 +56,12 @@
     </ClInclude>
     <ClInclude Include="..\Common\Utils.h">
       <Filter>Source Files\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Encoder.h">
+      <Filter>Source Files\Cache</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Decoder.h">
+      <Filter>Source Files\Cache</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

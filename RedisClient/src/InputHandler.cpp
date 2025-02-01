@@ -14,7 +14,7 @@ namespace soba
 		std::cout << "RedisLite> ";
 
 		std::getline(std::cin, command);
-		if (tolower(command) == "/help") DisplayAvailableCommands();
+		if (utils::tolower(command) == "/help") DisplayAvailableCommands();
 		else                             return command;
 
 		return {};

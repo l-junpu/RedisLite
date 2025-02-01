@@ -19,10 +19,28 @@
     <ClCompile Include="src\Server.cpp">
       <Filter>Source Files\Server</Filter>
     </ClCompile>
+    <ClCompile Include="..\Common\TcpSocket.cpp">
+      <Filter>Source Files\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\SenderReceiver.cpp">
+      <Filter>Source Files\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Cache.cpp">
+      <Filter>Source Files\Cache</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Server.h">
       <Filter>Source Files\Server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\TcpSocket.h">
+      <Filter>Source Files\Server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\SenderReceiver.h">
+      <Filter>Source Files\Server</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Cache.h">
+      <Filter>Source Files\Cache</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

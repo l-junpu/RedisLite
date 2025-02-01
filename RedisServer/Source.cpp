@@ -42,8 +42,5 @@ void HandleClientRequest(SOCKET ClientSocket, soba::Cache* Cache)
 
 int main()
 {
-    soba::TcpServer server(&HandleClientRequest, nullptr);
-    server.Initialize();
-    server.HandleClientConnections();
-    server.Terminate();
+
 }

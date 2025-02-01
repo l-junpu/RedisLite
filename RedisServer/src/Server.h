@@ -12,11 +12,11 @@
 
 namespace soba
 {
-	class TcpServer
+	class TcpServer final
 	{
 	public:
 
-		TcpServer(const std::string& host, const int port, const int backlog = 5);
+		void InitializeServer(const std::string& host, const int port, const int backlog = 5);
 
 		void Run();
 

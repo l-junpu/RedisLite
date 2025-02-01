@@ -5,10 +5,36 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
+    <Filter Include="Source Files\Client">
+      <UniqueIdentifier>{2c4bd630-7aae-4c4a-841b-aac82f05ef4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\TcpSocket">
+      <UniqueIdentifier>{51468d11-4d91-46b8-8690-a8acc4102a20}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Client.cpp">
+      <Filter>Source Files\Client</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\SenderReceiver.cpp">
+      <Filter>Source Files\TcpSocket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\TcpSocket.cpp">
+      <Filter>Source Files\TcpSocket</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Client.h">
+      <Filter>Source Files\Client</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\SenderReceiver.h">
+      <Filter>Source Files\TcpSocket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\TcpSocket.h">
+      <Filter>Source Files\TcpSocket</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

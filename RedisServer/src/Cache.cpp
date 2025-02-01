@@ -1,13 +1,33 @@
 #include "Cache.h"
 
+#include "Common/SenderReceiver.h"
+
 #include <thread>
 #include <iostream>
 
 namespace soba
 {
-	std::string Cache::HandleUserRequest(SOCKET clientSocket)
+	void Cache::HandleUserRequest(SOCKET clientSocket)
 	{
-		return std::string();
+		Sender   sender   = Sender(clientSocket);
+		Receiver receiver = Receiver(clientSocket);
+
+		std::string request = {};
+
+		while (true) {
+			request = receiver.ReceiveData();
+
+			std::cout << "Received request: " << request << std::endl;
+
+			if (request == "exit") {
+				break;
+			}
+			else {
+				sender.SendData("meow meow meow meow");
+			}
+		}
+
+		closesocket(clientSocket);
 	}
 
 	std::pair<Cache::RequestType, Cache::RespFormat> Cache::InterpretUserRequest(const std::string& request)

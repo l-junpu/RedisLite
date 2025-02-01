@@ -13,7 +13,7 @@ namespace soba
 
 		using RespFormat = std::string;
 
-		std::string HandleUserRequest(SOCKET clientSocket);
+		void HandleUserRequest(SOCKET clientSocket);
 		
 	private:
 

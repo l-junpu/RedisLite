@@ -1,4 +1,4 @@
-#ifndef SOBA_SOCKET_H
+#ifndef SOBA_SOCKET_5
 #define SOBA_SOCKET_H
 
 #include <string>
@@ -13,15 +13,18 @@ namespace soba
 	{
 	public:
 
-		TcpSocket(const std::string& host, const int port, const int backlog);
+		// Server Use Only
+		SOCKET AcceptConnectionFromClient();
 
-		SOCKET AcceptConnection();
+		// Client Use Only
+		void EstablishConnectionToServer(const std::string& host, const int port);
 		
-	private:
-
+		// Socket Management
 		void CreateSocket();
 		void BindSocket(const std::string& host, const int port);
-		void ListenSocket(const int backlog);
+		void ListenSocket(const int backlog = 5);
+
+		SOCKET GetSocket() const;
 
 	private:
 

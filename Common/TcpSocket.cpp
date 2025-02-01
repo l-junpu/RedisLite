@@ -4,13 +4,6 @@
 
 namespace soba
 {
-	TcpSocket::TcpSocket(const std::string& host, const int port, const int backlog)
-	{
-		CreateSocket();
-		BindSocket(host, port);
-		ListenSocket(backlog);
-	}
-
 	void TcpSocket::CreateSocket()
 	{
 		m_Socket = socket(AF_INET, SOCK_STREAM, 0);
@@ -26,7 +19,7 @@ namespace soba
 		serverAddress.sin_port = htons(port); // Port in Network Byte Order
 
 		// Covert IP Address from Text to Binary
-		if (inet_pton(AF_INET, host.c_str(), &serverAddress.sin_addr) != -1) {
+		if (inet_pton(AF_INET, host.c_str(), &serverAddress.sin_addr) != 1) {
 			throw std::runtime_error("Invalid IPv4 Address: " + host);
 		}
 
@@ -43,7 +36,12 @@ namespace soba
 		}
 	}
 
-	SOCKET TcpSocket::AcceptConnection()
+	SOCKET TcpSocket::GetSocket() const
+	{
+		return m_Socket;
+	}
+
+	SOCKET TcpSocket::AcceptConnectionFromClient()
 	{
 		sockaddr_in clientAddress{};
 		int clientLen = sizeof(clientAddress);
@@ -60,5 +58,22 @@ namespace soba
 		std::cout << "Client connected from: " << clientIP << std::endl;
 
 		return clientSocket;
+	}
+
+	void TcpSocket::EstablishConnectionToServer(const std::string& host, const int port)
+	{
+		sockaddr_in serverAddress{};
+		serverAddress.sin_family = AF_INET;   // IPv4
+		serverAddress.sin_port = htons(port); // Port in Network Byte Order
+
+		// Covert IP Address from Text to Binary
+		if (inet_pton(AF_INET, host.c_str(), &serverAddress.sin_addr) != 1) {
+			throw std::runtime_error("Invalid IPv4 Address: " + host);
+		}
+
+		// Connect to the Server
+		if (connect(m_Socket, (struct sockaddr*)&serverAddress, sizeof(serverAddress)) == SOCKET_ERROR) {
+			throw std::runtime_error("Failed to connect to the server: " + std::to_string(WSAGetLastError()));
+		}
 	}
 }

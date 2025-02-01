@@ -129,7 +129,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\Common\SenderReceiver.cpp" />
+    <ClCompile Include="..\Common\TcpSocket.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="src\Client.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Common\SenderReceiver.h" />
+    <ClInclude Include="..\Common\TcpSocket.h" />
+    <ClInclude Include="src\Client.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

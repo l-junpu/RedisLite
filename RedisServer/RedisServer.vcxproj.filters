@@ -11,6 +11,9 @@
     <Filter Include="Source Files\Cache">
       <UniqueIdentifier>{4b6b5893-bd4b-4fd9-a248-04a79ba3c2c8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\TcpSocket">
+      <UniqueIdentifier>{b1f9acf6-dfdd-4f2d-85c3-9c786e928b2d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp">
@@ -19,28 +22,28 @@
     <ClCompile Include="src\Server.cpp">
       <Filter>Source Files\Server</Filter>
     </ClCompile>
-    <ClCompile Include="..\Common\TcpSocket.cpp">
-      <Filter>Source Files\Server</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Common\SenderReceiver.cpp">
-      <Filter>Source Files\Server</Filter>
-    </ClCompile>
     <ClCompile Include="src\Cache.cpp">
       <Filter>Source Files\Cache</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\TcpSocket.cpp">
+      <Filter>Source Files\TcpSocket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\SenderReceiver.cpp">
+      <Filter>Source Files\TcpSocket</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Server.h">
       <Filter>Source Files\Server</Filter>
     </ClInclude>
-    <ClInclude Include="..\Common\TcpSocket.h">
-      <Filter>Source Files\Server</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Common\SenderReceiver.h">
-      <Filter>Source Files\Server</Filter>
-    </ClInclude>
     <ClInclude Include="src\Cache.h">
       <Filter>Source Files\Cache</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\TcpSocket.h">
+      <Filter>Source Files\TcpSocket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\SenderReceiver.h">
+      <Filter>Source Files\TcpSocket</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

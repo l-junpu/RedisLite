@@ -1,4 +1,6 @@
 #include "Client.h"
+#include "Common/Decoder.h"
+#include "Common/Encoder.h"
 
 #include <iostream>
 #include <stdexcept>
@@ -37,12 +39,15 @@ namespace soba
 
 				// Send the Client's command over - If "/exit", we can just terminate and cleanup
 				std::cout << "Sending command: " << command << std::endl;
-				sender.SendData(command);
+				sender.SendData( Encoder::EncodeRESP(command) );
 				if (command == "/exit") break;
 
 				// Receive Server's response
 				std::string response = receiver.ReceiveData();
-				std::cout << "Received response: " << response << std::endl;
+				std::cout << "Received response (raw):\n" << response << std::endl;
+
+				Decoder decoder(response);
+				std::cout << "Received response (decoded):\n" << decoder.DecodeRESP()->ToString() << std::endl;
 				std::cout << "\n-------------------------------------------\n" << std::endl;
 			}
 			catch (const std::exception& e) {

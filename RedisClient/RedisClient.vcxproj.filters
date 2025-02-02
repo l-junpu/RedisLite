@@ -17,6 +17,9 @@
     <Filter Include="Source Files\Utils">
       <UniqueIdentifier>{d00a62f0-9b64-4a0b-a57f-63228f69e0c2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Translators">
+      <UniqueIdentifier>{3b664b0b-d0a8-47c8-b2c9-a64a12fe6970}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp">
@@ -34,6 +37,12 @@
     <ClCompile Include="src\InputHandler.cpp">
       <Filter>Source Files\InputHandler</Filter>
     </ClCompile>
+    <ClCompile Include="..\Common\Decoder.cpp">
+      <Filter>Source Files\Translators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\RespTypes.cpp">
+      <Filter>Source Files\Translators</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Client.h">
@@ -50,6 +59,15 @@
     </ClInclude>
     <ClInclude Include="..\Common\Utils.h">
       <Filter>Source Files\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Decoder.h">
+      <Filter>Source Files\Translators</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Encoder.h">
+      <Filter>Source Files\Translators</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\RespTypes.h">
+      <Filter>Source Files\Translators</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

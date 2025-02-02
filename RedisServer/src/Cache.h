@@ -1,6 +1,8 @@
 #ifndef SOBA_CACHE_H
 #define SOBA_CACHE_H
 
+#include "Common/RespTypes.h"
+
 #include <mutex>
 #include <string>
 #include <vector>
@@ -28,11 +30,11 @@ namespace soba
 			std::chrono::steady_clock::time_point StartTime;
 		};
 
-		std::string GetData(const RespFormat& request);
+		std::string GetData(const RespArray& request);
 
-		std::string SetData(const RespFormat& request);
+		std::string SetData(const RespArray& request);
 
-		std::string DeleteData(const RespFormat& request);
+		std::string DeleteData(const RespArray& request);
 
 	private:
 

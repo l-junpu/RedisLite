@@ -17,6 +17,9 @@
     <Filter Include="Source Files\Utils">
       <UniqueIdentifier>{38683dd6-a08c-4d7d-a5a1-705620e77a36}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Translators">
+      <UniqueIdentifier>{e368d0fe-1caf-42ff-b389-66a969747315}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp">
@@ -34,11 +37,11 @@
     <ClCompile Include="..\Common\SenderReceiver.cpp">
       <Filter>Source Files\TcpSocket</Filter>
     </ClCompile>
-    <ClCompile Include="src\Encoder.cpp">
-      <Filter>Source Files\Cache</Filter>
+    <ClCompile Include="..\Common\Decoder.cpp">
+      <Filter>Source Files\Translators</Filter>
     </ClCompile>
-    <ClCompile Include="src\Decoder.cpp">
-      <Filter>Source Files\Cache</Filter>
+    <ClCompile Include="..\Common\RespTypes.cpp">
+      <Filter>Source Files\Translators</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -57,11 +60,14 @@
     <ClInclude Include="..\Common\Utils.h">
       <Filter>Source Files\Utils</Filter>
     </ClInclude>
-    <ClInclude Include="src\Encoder.h">
-      <Filter>Source Files\Cache</Filter>
+    <ClInclude Include="..\Common\Decoder.h">
+      <Filter>Source Files\Translators</Filter>
     </ClInclude>
-    <ClInclude Include="src\Decoder.h">
-      <Filter>Source Files\Cache</Filter>
+    <ClInclude Include="..\Common\Encoder.h">
+      <Filter>Source Files\Translators</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\RespTypes.h">
+      <Filter>Source Files\Translators</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -131,21 +131,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\Common\Decoder.cpp" />
+    <ClCompile Include="..\Common\RespTypes.cpp" />
     <ClCompile Include="..\Common\SenderReceiver.cpp" />
     <ClCompile Include="..\Common\TcpSocket.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="src\Cache.cpp" />
-    <ClCompile Include="src\Decoder.cpp" />
-    <ClCompile Include="src\Encoder.cpp" />
     <ClCompile Include="src\Server.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Common\Decoder.h" />
+    <ClInclude Include="..\Common\Encoder.h" />
+    <ClInclude Include="..\Common\RespTypes.h" />
     <ClInclude Include="..\Common\SenderReceiver.h" />
     <ClInclude Include="..\Common\TcpSocket.h" />
     <ClInclude Include="..\Common\Utils.h" />
     <ClInclude Include="src\Cache.h" />
-    <ClInclude Include="src\Decoder.h" />
-    <ClInclude Include="src\Encoder.h" />
     <ClInclude Include="src\Server.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
